@@ -1,22 +1,20 @@
 Non-fungible Token (NFT)
 ===================
 
->**Note**: If you'd like to learn how to create an NFT contract from scratch that explores every aspect of the [NEP-171](https://github.com/near/NEPs/blob/master/neps/nep-0171.md) standard including an NFT marketplace, check out the NFT [Zero to Hero Tutorial](https://docs.near.org/tutorials/nfts/introduction).
+>**Note**: If you'd like to learn how to create an NFT contract from scratch that explores every aspect of the [NEP-171] standard including an NFT marketplace, check out the NFT [Zero to Hero Tutorial].
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/near-examples/NFT)
+[![Open in Gitpod]
 
 
 This repository includes an example implementation of a [non-fungible token] contract which uses [near-contract-standards] and workspaces-js and -rs tests.
 
-  [non-fungible token]: https://nomicon.io/Standards/NonFungibleToken/README.html
-  [near-contract-standards]: https://github.com/near/near-sdk-rs/tree/master/near-contract-standards
-  [simulation]: https://github.com/near/near-sdk-rs/tree/master/near-sdk-sim
+
 Prerequisites
 =============
 If you're using Gitpod, you can skip this step.
 
-  * Make sure Rust is installed per the prerequisites in [`near-sdk-rs`](https://github.com/near/near-sdk-rs).
-  * Make sure [near-cli](https://github.com/near/near-cli) is installed.
+  * Make sure Rust is installed per the prerequisites in [`near-sdk-rs`]
+  * Make sure [near-cli] is installed.
 
 Explore this contract
 =====================
@@ -57,7 +55,7 @@ Using this contract
 
 ### Quickest deploy
 
-You can build and deploy this smart contract to a development account. [Dev Accounts](https://docs.near.org/concepts/basics/account#dev-accounts) are auto-generated accounts to assist in developing and testing smart contracts. Please see the [Standard deploy](#standard-deploy) section for creating a more personalized account to deploy to.
+You can build and deploy this smart contract to a development account. [Dev Accounts] are auto-generated accounts to assist in developing and testing smart contracts. Please see the [Standard deploy] section for creating a more personalized account to deploy to.
 
 ```bash
 near dev-deploy --wasmFile res/non_fungible_token.wasm
@@ -95,7 +93,7 @@ near view $CONTRACT_NAME nft_metadata
 
 ### Standard deploy
 
-This smart contract will get deployed to your NEAR account. For this example, please create a new NEAR account. Because NEAR allows the ability to upgrade contracts on the same account, initialization functions must be cleared. If you'd like to run this example on a NEAR account that has had prior contracts deployed, please use the `near-cli` command `near delete`, and then recreate it in Wallet. To create (or recreate) an account, please follow the directions in [Test Wallet](https://wallet.testnet.near.org) or ([NEAR Wallet](https://wallet.near.org/) if we're using `mainnet`).
+This smart contract will get deployed to your NEAR account. For this example, please create a new NEAR account. Because NEAR allows the ability to upgrade contracts on the same account, initialization functions must be cleared. If you'd like to run this example on a NEAR account that has had prior contracts deployed, please use the `near-cli` command `near delete`, and then recreate it in Wallet. To create (or recreate) an account, please follow the directions in [Test Wallet] or ([NEAR Wallet] if we're using `mainnet`).
 
 In the project root, log in to your newly created account with `near-cli` by following the instructions after this command.
 
@@ -113,7 +111,7 @@ Now we can deploy the compiled contract in this example to your account:
 
     near deploy --wasmFile res/non_fungible_token.wasm --accountId $ID
 
-NFT contract should be initialized before usage. More info about the metadata at [nomicon.io](https://nomicon.io/Standards/NonFungibleToken/Metadata.html). But for now, we'll initialize with the default metadata.
+NFT contract should be initialized before usage. More info about the metadata at [nomicon.io]. But for now, we'll initialize with the default metadata.
 
     near call $ID new_default_meta '{"owner_id": "'$ID'"}' --accountId $ID
 
@@ -151,4 +149,4 @@ Notes
 
 AssemblyScript
 ==============
-Currently, AssemblyScript is not supported for this example. An old version can be found in the [NEP4 example](https://github.com/near-examples/NFT/releases/tag/nep4-example), but this is not recommended as it is out of date and does not follow the standards the NEAR SDK has set currently.
+Currently, AssemblyScript is not supported for this example. An old version can be found in the [NEP4 example], but this is not recommended as it is out of date and does not follow the standards the NEAR SDK has set currently.
